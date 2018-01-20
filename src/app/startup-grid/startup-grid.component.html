@@ -1,0 +1,12 @@
+<!-- works -->
+<div id="startups"  class=" clearfix grid"> 
+  <figure *ngFor="let startup of startups"  class="effect-oscar  wowload fadeIn">
+      <img src="{{ startup.image }}" alt="{{ startup.nome }}"/>
+      <figcaption>
+          <h2>{{ startup.nome }}</h2>
+          <p><br>
+          <a [routerLink]="['startup', startup.id]" title="{{ startup.nome }}" data-gallery>View more</a></p>            
+      </figcaption>
+  </figure>
+</div>
+<!-- works -->
