@@ -1,11 +1,13 @@
 <!-- works -->
 <div id="startups"  class=" clearfix grid"> 
-  <figure *ngFor="let startup of startups"  class="effect-oscar  wowload fadeIn">
-      <img src="{{ startup.image }}" alt="{{ startup.nome }}"/>
+  <h1>{{newValue}}</h1>
+  <figure *ngFor="let startup of startups| async"  class="effect-oscar  wowload fadeIn">
+      <iframe width="100%" height="100%" src="{{startup.url}}"> </iframe>
+      <!-- <img src="{{ startup.image }}" alt="{{ startup.nome_autor }}"/> -->
       <figcaption>
-          <h2>{{ startup.nome }}</h2>
+          <h2>{{ startup.nome_autor }}</h2>
           <p><br>
-          <a [routerLink]="['startup', startup.id]" title="{{ startup.nome }}" data-gallery>View more</a></p>            
+          <a [routerLink]="['startup', startup.id]" title="{{ startup.nome_autor }}" data-gallery>View more</a></p>            
       </figcaption>
   </figure>
 </div>
