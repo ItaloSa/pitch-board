@@ -3,9 +3,13 @@
   <figure *ngFor="let startup of startups| async"  class="effect-oscar  wowload fadeIn">
       <img src="https://img.youtube.com/vi/{{ startup.url }}/hqdefault.jpg" alt="{{ startup.titulo }}"/>
       <figcaption>
-          <h2>{{ startup.titulo }}</h2>
-          <p><br>
-          <a [routerLink]="['startup', startup.key]" title="{{ startup.nome_autor }}" data-gallery>Saiba Mais</a></p>            
+          
+          <p style="font-size: 30px;">{{ startup.titulo }}</p>
+          <p><a [routerLink]="['startup', startup.key]" title="{{ startup.nome_autor }}" data-gallery>Saiba Mais</a></p>            
+          <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+          <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <h4 class="tag label label-info" style="font-size:18px">{{startup.categoria}}</h4>
       </figcaption>
   </figure>
 </div>
