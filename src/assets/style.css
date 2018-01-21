@@ -29,7 +29,7 @@ p{font-size:1em;line-height: 1.7em; margin-bottom: 1.7em;}
 .btn-default{color: #ccc;border: 1px solid #aaa;}
 .btn-default:hover,.btn-default:active{background: rgba(0,0,0,0.8);}
 .btn-primary{color: #fff;background:#00a9c6;width: 100%;outline: none;}
-.btn-primary:hover,.btn-primary:active,.btn-primary:focus{background:#1BC0DC;box-shadow: none;}
+.btn-primary:hover,.btn-primary:active,.btn-primary:focus{background:#ffc400;box-shadow: none;}
 
 .topbar {background:url(../images/lines.png);	height:5px;position: fixed;top: 0;width: 100%;z-index: 1000;}
 .navbar-nav > li > a{font-size: 1em;line-height: 3.6em;}
@@ -76,11 +76,11 @@ p{font-size:1em;line-height: 1.7em; margin-bottom: 1.7em;}
 .team img{width: 100%;}
 .team b{font-size: 1.2em;display: block;}
 .team a i.fa{color: #fff; font-size: 2em;}
-.team a i.fa:hover{color: #21abca;}
+.team a i.fa:hover{color: #ca8621;}
 
 
 .highlight-info{ background:url(https://preview.ibb.co/m02c8b/lab.jpg) center fixed; background-size: cover; color:#fff;}
-.highlight-info .overlay{ background: #4b6bb75d}
+.highlight-info .overlay{ background: #ff91004d}
 .highlight-info h4{color: #fff;margin:0.5em 0 0 0;}
 /*about us*/
 

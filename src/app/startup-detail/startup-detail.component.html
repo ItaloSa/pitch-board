@@ -55,14 +55,22 @@
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Informações de Contato</h5>
-        </div>
+        <!-- <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Entre em contato com a {{pitch.titulo}}</h3>
+        </div> -->
         <div class="modal-body">
-          {{pitch.info_contato}}
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary detailsButton" data-dismiss="modal">Close</button>
+            <h2 class="text-center  wowload fadeInUp">Entre em contato com a {{pitch.titulo}}</h2>
+            <div class="contactform">
+                <!-- <h2 class="text-center  wowload fadeInUp">Entre em contato</h2> -->
+                  <div class="row wowload fadeInLeftBig">      
+                      <div class="col-sm-6 col-sm-offset-3 col-xs-12">      
+                        <input type="text" type="text" placeholder="Nome">
+                        <input type="text" type="email" placeholder="E-mail">
+                        <textarea rows="5" placeholder="Menssagem" style="resize:none"></textarea>
+                        <button class="btn btn-primary" data-dismiss="modal"><i class="fa fa-paper-plane"></i> Enviar</button>
+                      </div>
+                  </div>
+                </div>
         </div>
       </div>
     </div>
