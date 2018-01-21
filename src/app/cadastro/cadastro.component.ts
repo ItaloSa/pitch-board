@@ -46,7 +46,7 @@ export class CadastroComponent implements OnInit {
   }
 
   addItem(data: {}) {
-    this.itemsRef.push(data);
+    //this.itemsRef.push(data);
   }
 
   cadastrar(){
@@ -60,7 +60,7 @@ export class CadastroComponent implements OnInit {
       "n_contatos":"",      
       "url": ""      
     };
-    alert("Cadastrado com sucesso!")
+    //alert("Cadastrado com sucesso!")
   }
 
   ngOnInit() {

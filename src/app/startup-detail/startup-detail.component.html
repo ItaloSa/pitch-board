@@ -14,37 +14,39 @@
 </div>
 <!-- About Ends -->
 <!-- Cirlce Starts -->
-<div id="about" class="container spacer about">        
+<div id="about" class="container spacer about" style="padding-top: 40px;">        
   <!-- <h2 class="text-center wowload fadeInUp" >{{ pitch.autor }}</h2> -->
   <div class="row">
       <div class="col-sm-8 wowload fadeInLeft">
-          <h4>
-              <i class="fa fa-youtube-play "></i> Pitch</h4>
-              <div class="video-container" style="margin-top: 29px;">
-                    <p>Showing: {{url}}</p>                    
-                  <iframe class="e2e-iframe-untrusted-src" width="853" height="480" [src]="url" frameborder="0" allowfullscreen></iframe>
-                </div>
+        <div class="video-container">
+            <iframe class="e2e-iframe-untrusted-src" width="853" height="480" [src]="url" frameborder="0" allowfullscreen></iframe>
+          </div>
       </div>
       <div class="col-sm-4 wowload fadeInRight">
-            <h4><i class="fa fa-user"></i> Autor</h4>
-            <h4 >&emsp;{{pitch.autor}}</h4>
+          <h4><i class="fa fa-youtube-play"></i> {{ pitch.titulo }}</h4>
+    </div>
+      <div class="col-sm-4 wowload fadeInRight">
+            <h4><i class="fa fa-user"></i> {{pitch.autor}}</h4>
       </div>
       <div class="col-sm-4 wowload fadeInRight">
-            <h4><i class="fa fa-tags"></i> Categoria</h4>
-            <h4>&emsp;{{pitch.categoria}}</h4>
+            <h4><i class="fa fa-tags"></i> {{pitch.categoria}}</h4>
       </div>
       <div class="col-sm-4 wowload fadeInRight">
             <h4><i class="fa fa-pencil-square-o"></i> Descrição</h4>
             <p>{{pitch.descricao}}</p>
       </div>
-      
+      <div class="col-sm-4 wowload fadeInRight">
+          <button type="button" class="btn btn-primary" data-toggle="modal" (click)="update()" data-target="#exampleModal">
+              Fale com a Start UP
+          </button>
+    </div>
   </div>
   <div class="row">
     <!-- Button trigger modal -->
     <div class="text-center">
-        <button type="button" class="btn btn-primary detailsButton" data-toggle="modal" (click)="update()" data-target="#exampleModal">
+        <!-- <button type="button" class="btn btn-primary detailsButton" data-toggle="modal" (click)="update()" data-target="#exampleModal">
             Desejo Entrar em Contato com a StartUp
-        </button>
+        </button> -->
     </div>
     </div>
   
