@@ -32,13 +32,10 @@ export class StartupDetailComponent {
     console.log(this.url);
     });
   }
-  
-  updateVideoUrl(id: string) {
-    // Appending an ID to a YouTube URL is safe.
-    // Always make sure to construct SafeValue objects as
-    // close as possible to the input data so
-    // that it's easier to check if the value is safe.
-    dangerousVideoUrl = 'https://www.youtube.com/embed/' + id;
-    this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
+
+  update(){
+    this.pitch.n_contatos ++;
+    this.itemRef.update({ n_contatos: this.pitch.n_contatos });
+    //console.log('pitch atualizado');
   }
 }

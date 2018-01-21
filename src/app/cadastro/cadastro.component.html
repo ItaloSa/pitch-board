@@ -5,15 +5,26 @@
     <h3 class="text-center  wowload fadeInLeftBig"> E dê visiblidade ao seu projeto</h3>
     <div class="row wowload fadeInLeftBig">
       <div class="col-sm-6 col-sm-offset-3 col-xs-12">
+
         <p>Nome do Autor</p>
-        <input type="text" placeholder="Autor" [(ngModel)]="pitch.nome_autor">
+        <input type="text" placeholder="Autor" [(ngModel)]="pitch.autor">
+
         <p>Titulo do Pitch</p>
-        <input type="text" placeholder="Titulo" [(ngModel)]="pitch.titulo_pitch">
+        <input type="text" placeholder="Titulo" [(ngModel)]="pitch.titulo">
+
+        <p>Categoria</p>        
+        <select style="margin-bottom:15px; width:100%">
+            <option *ngFor="let categoria of categorias" [value]="categoria.nome" [(ngModel)]="pitch.categoria">{{categoria.nome}}</option>
+        </select>
+
         <p>Descrição</p>
         <textarea rows="5" placeholder="Descrição da sua Start-up" style="resize:none" [(ngModel)]="pitch.descricao"></textarea>
+        
         <p>Informações de Contato</p>
         <textarea rows="5" placeholder="Informações para contato." style="resize:none" [(ngModel)]="pitch.info_contato"></textarea>
+
         <button (click)="cadastrar()" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Cadastrar</button>
+      
       </div>
     </div>
   </div>

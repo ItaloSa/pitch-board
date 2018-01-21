@@ -7,7 +7,7 @@
         <div class="navbar-header">
           <!-- Logo Starts -->
           <a class="navbar-brand" routerLink="" fragment="startups">
-            <img src="https://i.imgur.com/XF5PnqU.png" alt="logo">
+            <img src="assets/images/pitchboard_web.svg" style="height:55px" alt="logo">
           </a>
           <!-- #Logo Ends -->
 
@@ -28,14 +28,15 @@
             <li >
               <a routerLink="" fragment="startups">Home</a>
             </li>
-            <!-- <li *ngIf="showItens" >
-              <a routerLink="" fragment="about">About</a>
-            </li>
+            <!--
             <li *ngIf="showItens">
               <a routerLink="" fragment="partners">Partners</a>
             </li> -->
+            <li *ngIf="showItens" >
+                <a routerLink="cadastro" fragment="about">Cadastrar-se</a>
+              </li>
             <li *ngIf="showItens"> 
-              <a href="#contact">Contact</a>
+              <a href="#contact">Contato</a>
             </li>
           </ul>
         </div>

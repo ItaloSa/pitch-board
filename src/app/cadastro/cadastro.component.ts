@@ -8,12 +8,36 @@ import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 })
 export class CadastroComponent implements OnInit {
 
+  categorias = [
+    {nome:"Automóveis e veículos"},
+    {nome:"Moda e beleza"},
+    {nome:"Comédia"},
+    {nome:"Educação"},
+    {nome:"Entretenimento"},
+    {nome:"Entretenimento para a família"},
+    {nome:"Filmes e animação"},
+    {nome:"Culinária"},
+    {nome:"Video games"},
+    {nome:"Instruções e estilo"},
+    {nome:"Música"},
+    {nome:"Notícias e política"},
+    {nome:"Sem fins lucrativos e ativismo"},
+    {nome:"Pessoas e blogs"},
+    {nome:"Animais"},
+    {nome:"Ciência e tecnologia"},
+    {nome:"Esportes"},
+    {nome:"Viagens e eventos"}
+  ];
+
   pitch = {
-    "nome_autor": "",
-    "titulo_pitch": "",
+    "titulo": "",
+    "autor": "",
+    "categoria": "",
     "descricao": "",
-    "info_contato": ""
-  }
+    "info_contato": "",
+    "n_contatos":"",
+    "url": ""      
+  };
 
   itemsRef: AngularFireList<any>;
 
@@ -28,12 +52,15 @@ export class CadastroComponent implements OnInit {
   cadastrar(){
     this.addItem(this.pitch);
     this.pitch = {
-      "nome_autor": "",
-      "titulo_pitch": "",
+      "titulo": "",
+      "autor": "",
+      "categoria": "",
       "descricao": "",
-      "info_contato": ""
+      "info_contato": "",
+      "n_contatos":"",      
+      "url": ""      
     };
-    alert("Success")
+    alert("Cadastrado com sucesso!")
   }
 
   ngOnInit() {

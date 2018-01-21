@@ -19,6 +19,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { StartupDetailComponent } from './startup-detail/startup-detail.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { VideoUploadComponent } from './video-upload/video-upload.component';
 
 const firebase = {
   apiKey: "AIzaSyAQK8BPa-MRtALeyFFIAjzBvFWTl45UTJk",
@@ -41,7 +42,8 @@ const firebase = {
     ContactComponent,
     FooterComponent,
     StartupDetailComponent,
-    CadastroComponent
+    CadastroComponent,
+    VideoUploadComponent
   ],
   imports: [
     BrowserModule,

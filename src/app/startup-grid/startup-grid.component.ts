@@ -15,11 +15,9 @@ enableProdMode();
 export class StartupGridComponent {
 
   startups: Observable<any[]>;
-
   itemsRef: AngularFireList<any>;
 
   constructor(db: AngularFireDatabase) {
-    this.startups = db.list('pitches').valueChanges();
     this.itemsRef = db.list('pitches');    
     this.startups = this.itemsRef.snapshotChanges().map(changes => {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
