@@ -1,0 +1,15 @@
+.searchBar{
+    max-width: 200px;
+    height: 40px;
+}
+
+input{
+    -webkit-appearance: none;  /* Remove estilo padrão do Chrome */
+    -moz-appearance: none; /* Remove estilo padrão do FireFox */
+    appearance: none; /* Remove estilo padrão do FireFox*/
+}
+
+.searchBtn{
+    width: auto;
+    float: left;
+}
