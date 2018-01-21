@@ -9,11 +9,13 @@ import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 export class CadastroComponent implements OnInit {
 
   pitch = {
-    "nome_autor": "",
-    "titulo_pitch": "",
+    "titulo": "",
+    "autor": "",
+    "categoria": "",
     "descricao": "",
-    "info_contato": ""
-  }
+    "info_contato": "",
+    "url": ""      
+  };
 
   itemsRef: AngularFireList<any>;
 
@@ -28,12 +30,14 @@ export class CadastroComponent implements OnInit {
   cadastrar(){
     this.addItem(this.pitch);
     this.pitch = {
-      "nome_autor": "",
-      "titulo_pitch": "",
+      "titulo": "",
+      "autor": "",
+      "categoria": "",
       "descricao": "",
-      "info_contato": ""
+      "info_contato": "",
+      "url": ""      
     };
-    alert("Success")
+    alert("Cadastrado com sucesso!")
   }
 
   ngOnInit() {
