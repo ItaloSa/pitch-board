@@ -2,34 +2,43 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase ,AngularFireObject} from 'angularfire2/database';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-startup-detail',
   templateUrl: './startup-detail.component.html',
   styleUrls: ['./startup-detail.component.css']
 })
-export class StartupDetailComponent implements OnInit {
+export class StartupDetailComponent {
 
-  pitches: Observable<any[]>;
-  startup: any;
-  inscricao: Subscription;
+  pitch: any;
+  id: any;
+  itemRef: AngularFireObject<any>;
+  url: any;
 
-  constructor(
-    private route: ActivatedRoute,
-    private db: AngularFireDatabase,
-    private router: Router
-
-  ) {
-    this.pitches = db.list('pitches').valueChanges(); 
+  constructor(  private route: ActivatedRoute,
+                private db: AngularFireDatabase,
+                private router: Router,
+                private sanitizer: DomSanitizer ) 
+  {
+    this.route.params.subscribe((params: any) => {this.id = params['id'];});
+    this.itemRef = db.object('/pitches/'+this.id);
+    this.itemRef.snapshotChanges().subscribe(action => {
+    this.pitch = action.payload.val();
+    this.url = 'https://www.youtube.com/embed/' +this.pitch.url;
+    this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
+    console.log(this.url);
+    });
   }
-
-
-  ngOnInit() {
-    this.inscricao = this.route.params.subscribe(
-      (params: any) => {
-        let id = params['id'];
-      }
-    );
+  
+  updateVideoUrl(id: string) {
+    // Appending an ID to a YouTube URL is safe.
+    // Always make sure to construct SafeValue objects as
+    // close as possible to the input data so
+    // that it's easier to check if the value is safe.
+    dangerousVideoUrl = 'https://www.youtube.com/embed/' + id;
+    this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
   }
 }

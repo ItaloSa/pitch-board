@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { StartupService } from './startup.service';
 
 import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppComponent } from './app.component';
@@ -47,7 +46,6 @@ const firebase = {
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebase),
-    AngularFirestoreModule,    
     AngularFireDatabaseModule,
     FormsModule,
     AppRoutingModule
