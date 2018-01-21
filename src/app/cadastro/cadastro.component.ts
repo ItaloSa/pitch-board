@@ -9,7 +9,6 @@ import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 export class CadastroComponent implements OnInit {
 
   categorias = [
-    {nome:"Categorias"},
     {nome:"Negócios"},
     {nome:"Educação"},
     {nome:"Produtos"},
