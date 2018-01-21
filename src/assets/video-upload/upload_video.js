@@ -147,7 +147,9 @@ UploadVideo.prototype.uploadFile = function(file) {
     onComplete: function(data) {
       var uploadResponse = JSON.parse(data);
       this.videoId = uploadResponse.id;
-      $('#video-id').text(this.videoId);
+      //$('#video-id').value(this.videoId);
+      //$('#video-id').trigger();
+      document.getElementById("video-id").value = this.videoId;
       $('.post-upload').show();
       this.pollForVideoStatus();
     }.bind(this)

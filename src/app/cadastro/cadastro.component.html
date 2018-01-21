@@ -1,12 +1,3 @@
-<span id="signinButton" class="pre-sign-in">
-    <span
-      class="g-signin"
-      data-callback="signinCallback"
-      data-clientid="579630963642-fg8kvfuiuljdj68fimok2il56uepa5tv.apps.googleusercontent.com"
-      data-cookiepolicy="single_host_origin"
-      data-scope="https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube">
-    </span>
-</span>
 <!--Contact Starts-->
 <div class="spacer">
   <div class="container contactform center">
@@ -14,28 +5,46 @@
     <h2 class="text-center  wowload fadeInUp" style="margin-bottom: 5px;">Cadastre-se</h2>
     <h4 class="text-center  wowload fadeInLeftBig" style="margin-top: 5px;"> E dê visiblidade a sua Start Up</h4>
     <div class="row wowload fadeInLeftBig">
-    
-      <div class="col-sm-6 col-sm-offset-3 col-xs-12" style="margin-top: 5px;">
 
-        <!-- <label>Nome do Autor</label> -->
+      <div class="col-sm-6 col-sm-offset-3 col-xs-12" style="margin-top: 5px;">
+        <span id="signinButton" class="pre-sign-in">
+            <span
+              class="g-signin"
+              data-callback="signinCallback"
+              data-clientid="579630963642-fg8kvfuiuljdj68fimok2il56uepa5tv.apps.googleusercontent.com"
+              data-cookiepolicy="single_host_origin"
+              data-scope="https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube">
+            </span>
+        </span>
+      </div>
+      <div class="col-sm-6 col-sm-offset-3 col-xs-12 post-sign-in" style="margin-top: 5px;">
+
+        <!-- <p style="margin-bottom: 5px;">Nome do Autor</p> -->
+        <label>Nome do Autor:</label>
         <input type="text" placeholder="Autor" [(ngModel)]="pitch.autor">
 
-        <!-- <label>Titulo do Pitch:</label> -->
+        <!-- <p style="margin-bottom: 5px;">Titulo do Pitch:</p> -->
+        <label for="title">Titulo do Pitch:</label>
         <input type="text" id="title" placeholder="Titulo" [(ngModel)]="pitch.titulo">
 
-        <!-- <label>Categoria</label>     -->
-        <select style="margin-bottom:15px; width:100%">
-            <option *ngFor="let categoria of categorias" [value]="categoria.nome" [(ngModel)]="pitch.categoria">{{categoria.nome}}</option>
+        <!-- <p style="margin-bottom: 5px;">Categoria</p>     -->
+        <label>Categoria:</label>
+        <select style="margin-bottom:15px; width:100%" [(ngModel)]="pitch.categoria">
+            <option *ngFor="let categoria of categorias" [value]="categoria.nome">{{categoria.nome}}</option>
         </select>
 
-        <!-- <label>Descrição</label> -->
+        <!-- <p style="margin-bottom: 5px;">Descrição</p> -->
+        <label for="description">Descrição:</label>
         <textarea rows="5" id="description" placeholder="Descrição da sua Start-up" style="resize:none" [(ngModel)]="pitch.descricao"></textarea>
         
-        <!-- <label>Informações de Contato</label> -->
+        <!-- <p style="margin-bottom: 5px;">Informações de Contato</p> -->
+        <label>Informações de Contato:</label>
         <textarea rows="5" placeholder="Informações para contato." style="resize:none" [(ngModel)]="pitch.info_contato"></textarea>
 
-        <input type="text" style="display:none" id="privacy-status" value="unlisted">
-
+        <div style="display:none">
+          <label for="privacy-status">Privacy Status:</label>
+          <select id="privacy-status"><option>unlisted</option></select>
+        </div>
         <div>
             <input input type="file" id="file" class="button" accept="video/*">
             <button id="button">Upload Video</button>
@@ -45,14 +54,15 @@
           </div>
       
           <div class="post-upload">
-            <p>Uploaded video with id <span id="video-id"></span>. Polling for status...</p>
+            <!-- <p>Uploaded video with id <span></span>. Polling for status...</p> -->
+            <input style="display:none" type="text" id="video-id" [(ngModel)]="pitch.url" #url>
             <ul id="post-upload-status"></ul>
             <div id="player"></div>
           </div>
           <p id="disclaimer">By uploading a video, you certify that you own all rights to the content or that you are authorized by the owner to make the content publicly available on YouTube, and that it otherwise complies with the YouTube Terms of Service located at <a href="http://www.youtube.com/t/terms" target="_blank">http://www.youtube.com/t/terms</a></p>
         </div>
-
-        <button (click)="cadastrar()" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Cadastrar</button>
+        <!-- <p>{{pitch | json}}</p> -->
+        <button (click)="cadastrar(url.value)" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Cadastrar</button>
       
       </div>
     </div>
