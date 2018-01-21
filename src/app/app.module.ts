@@ -47,6 +47,7 @@ const firebase = {
     BrowserModule,
     AngularFireModule.initializeApp(firebase),
     AngularFireDatabaseModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [StartupService],
