@@ -1,8 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { StartupService } from './startup.service';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -15,7 +19,14 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { StartupDetailComponent } from './startup-detail/startup-detail.component';
 
-
+const firebase = {
+  apiKey: "AIzaSyAQK8BPa-MRtALeyFFIAjzBvFWTl45UTJk",
+  authDomain: "pitchboard-42bba.firebaseapp.com",
+  databaseURL: "https://pitchboard-42bba.firebaseio.com",
+  projectId: "pitchboard-42bba",
+  storageBucket: "pitchboard-42bba.appspot.com",
+  messagingSenderId: "579630963642"
+}
 
 @NgModule({
   declarations: [
@@ -32,6 +43,8 @@ import { StartupDetailComponent } from './startup-detail/startup-detail.componen
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(firebase),
+    AngularFireDatabaseModule,
     AppRoutingModule
   ],
   providers: [StartupService],

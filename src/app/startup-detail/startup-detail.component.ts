@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-import { StartupService } from '../startup.service';
+import { Observable } from 'rxjs/Observable';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-startup-detail',
@@ -10,22 +11,25 @@ import { StartupService } from '../startup.service';
 })
 export class StartupDetailComponent implements OnInit {
 
+  pitches: Observable<any[]>;
   startup: any;
   inscricao: Subscription;
 
   constructor(
     private route: ActivatedRoute,
-    private startupService: StartupService,
+    private db: AngularFireDatabase,
     private router: Router
-  ) { }
+
+  ) {
+    this.pitches = db.list('pitches').valueChanges(); 
+  }
+
 
   ngOnInit() {
     this.inscricao = this.route.params.subscribe(
       (params: any) => {
         let id = params['id'];
-        this.startup = this.startupService.getStartup(id)
       }
     );
   }
-
 }
