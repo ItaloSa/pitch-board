@@ -14,6 +14,7 @@ import { TeamComponent } from './team/team.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { StartupDetailComponent } from './startup-detail/startup-detail.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 
 
@@ -28,7 +29,8 @@ import { StartupDetailComponent } from './startup-detail/startup-detail.componen
     TeamComponent,
     ContactComponent,
     FooterComponent,
-    StartupDetailComponent
+    StartupDetailComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
